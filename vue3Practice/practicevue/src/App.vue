@@ -1,15 +1,21 @@
 <template>
   <Navbar />
   <Event :text="text"/>
-  <SearchBar />
+  <SearchBar 
+  :data="temp_data"
+  @searchMovie="searchMovie($event)"
+  />
+  <p>
+    <button @click="showAll">전체 보기</button>
+  </p>
   <movies
-    :data="data"
+    :data="temp_data"
     :isModal="isModal"
     @increaseLike="increaseLike($event)"
     @openModal="isModal=true;selectedMovie=$event"
    />
   <Modal
-        :data="data"
+        :data="temp_data"
         :isModal="isModal"
         :selectedMovie="selectedMovie"
         @i="i"
@@ -35,6 +41,7 @@
         isModal: false,
         //foods: ["김밥","순대","만두", "떡국"],
         data: data,
+        temp_data:[...data],
         selectedMovie : 0,
         text: "NETFLEX 강렬한 운명의 드라마, 경기크리쳐",
       }
@@ -43,6 +50,16 @@
         increaseLike(i) {
           this.data[i].like++;
         },
+        searchMovie(text){
+          alert(text);
+          this.temp_data = this.temp_data.filter(movie=>{
+            return movie.title.includes(text);
+          })
+          console.log(data)
+        },
+        showAll(){
+          this.temp_data = [...this.data];
+        }
     },
     components: {
       Navbar: Navbar, //불러온 이름 그래도 사용하는것이 관례
