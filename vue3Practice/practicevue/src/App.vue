@@ -52,7 +52,7 @@
         },
         searchMovie(text){
           alert(text);
-          this.temp_data = this.temp_data.filter(movie=>{
+          this.temp_data = this.data.filter(movie=>{
             return movie.title.includes(text);
           })
           console.log(data)
