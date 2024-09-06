@@ -19,4 +19,4 @@ const router = createRouter({
 });
 
 // 라우터 추출 (main.js에서 import)
-export {router}
+export {router} 
