@@ -1,17 +1,17 @@
 <template>
-  <NewHeader/>
   <HelloWorld/>
+  <EnglishVersion/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-//import NewHeader from './components/NewHeader.vue';
+import EnglishVersion from './components/EnglishVersion.vue';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    //NewHeader
+    EnglishVersion
   }
 }
 </script>

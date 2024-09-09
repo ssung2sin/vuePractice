@@ -1210,7 +1210,7 @@ export default {
   }
 
   .padding-td {
-    display: none; /* padding-td 셀은 제거 */
+    display: none !important; /* padding-td 셀은 제거 */
   }
 }
 
@@ -1374,7 +1374,7 @@ export default {
   }
 
   .padding-td3 {
-    display: none; /* padding-td 셀은 제거 */
+    display: none !important; /* padding-td 셀은 제거 */
   }
 }
 
